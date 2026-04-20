@@ -15,5 +15,6 @@ data = {
         "on_failure": [os.getenv("CREATOR_EMAIL")],
         "on_success": [os.getenv("CREATOR_EMAIL")]
     },
+    
 }
 

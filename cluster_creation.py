@@ -3,7 +3,7 @@ import requests
 
 url = "https://adb-7405605185991044.4.azuredatabricks.net/api/2.0/clusters/create"
 
-token = os.getenv("PERSONAL_ACCESS_TOKEN")
+token = os.getenv("DATABRICKS_TOKEN")
 
 headers = {
     "Authorization": f"Bearer {token}",
