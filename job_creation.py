@@ -19,9 +19,9 @@ data = {
     "max_concurrent_runs": 1,
     "name": "hrynchuk_lab10_job",
     "notification_settings": {
-        "alert_on_last_attempt": false,
-        "no_alert_for_canceled_runs": false,
-        "no_alert_for_skipped_runs": false
+        "alert_on_last_attempt": False,
+        "no_alert_for_canceled_runs": False,
+        "no_alert_for_skipped_runs": False
     },
     "run_as": {
         "user_name": [os.getenv("CREATOR_EMAIL")]
