@@ -15,7 +15,7 @@ jobs:
       - name: Call Databricks API
         run: |
           curl -X GET https://adb-7405605185991044.4.azuredatabricks.net/api/2.0/clusters/list \
-          -H "Authorization: Bearer $PERSONAL_ACCESS_TOKEN"
+          -H "Authorization: Bearer $DATABRICKS_TOKEN"
         env:
           DATABRICKS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN}}
           CREATOR_EMAIL: ${{ secrets.CREATOR_EMAIL}}
