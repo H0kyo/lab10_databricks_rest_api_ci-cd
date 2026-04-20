@@ -30,7 +30,7 @@ data = {
         {
         "existing_cluster_id": "0420-150638-dy9ru7jm",
         "notebook_task": {
-            "notebook_path": f"Users/{os.getenv("WORKSPACE_EMAIL")}/lab10/test_notebook",
+            "notebook_path": f"/Users/{os.getenv("WORKSPACE_EMAIL")}/lab10/test_notebook",
             "source": "WORKSPACE"
         },
         "run_if": "ALL_SUCCESS",
