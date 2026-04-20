@@ -1,0 +1,20 @@
+name: Create Cluster
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-if-match:
+    runs-on: ubuntu-latest
+
+    if: contains(github.event.head_commit.message, 'create cluster')
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Create Cluster
+        run: python cluster_creation.py
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
