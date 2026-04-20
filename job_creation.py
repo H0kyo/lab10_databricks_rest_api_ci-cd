@@ -37,6 +37,10 @@ data = {
         "task_key": "fact_arrivals_gold_task"
         }
     ]
-
 }
+
+response = requests.post(url, headers=headers, json=data)
+
+print(response.status_code)
+print(response.json())
 
