@@ -15,12 +15,13 @@ data = {
     "spark_version": "14.3.x-scala2.12",
     "node_type_id": "Standard_DS3_v2",
     "num_workers": 0,
+
+    "data_security_mode": "SINGLE_USER",
+
     "azure_attributes": {
         "availability": "ON_DEMAND_AZURE"
     },
-    "custom_tags": {
-        "ResourceClass": "SingleNode"
-    },
+
     "spark_conf": {
         "spark.databricks.cluster.profile": "singleNode"
     }
