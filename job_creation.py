@@ -24,7 +24,7 @@ data = {
         "no_alert_for_skipped_runs": False
     },
     "run_as": {
-        "user_name": os.getenv("CREATOR_EMAIL")
+        "user_name": os.getenv("WORKSPACE_EMAIL")
     },
     "tasks": [
         {
