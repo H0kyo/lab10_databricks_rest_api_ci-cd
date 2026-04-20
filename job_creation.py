@@ -15,6 +15,28 @@ data = {
         "on_failure": [os.getenv("CREATOR_EMAIL")],
         "on_success": [os.getenv("CREATOR_EMAIL")]
     },
-    
+    "format": "MULTI_TASK",
+    "max_concurrent_runs": 1,
+    "name": "hrynchuk_lab10_job",
+    "notification_settings": {
+        "alert_on_last_attempt": false,
+        "no_alert_for_canceled_runs": false,
+        "no_alert_for_skipped_runs": false
+    },
+    "run_as": {
+        "user_name": [os.getenv("CREATOR_EMAIL")]
+    },
+    "tasks": [
+        {
+        "existing_cluster_id": "0420-150638-dy9ru7jm",
+        "notebook_task": {
+            "notebook_path": f"Users/{[os.getenv("WORKSPACE_EMAIL")]}/lab10/test_notebook",
+            "source": "WORKSPACE"
+        },
+        "run_if": "ALL_SUCCESS",
+        "task_key": "fact_arrivals_gold_task"
+        }
+    ]
+
 }
 

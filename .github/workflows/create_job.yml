@@ -1,0 +1,22 @@
+name: Create Job
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-if-match:
+    runs-on: ubuntu-latest
+
+    if: contains(github.event.head_commit.message, 'create job')
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Create Job
+        run: python job_creation.py
+        env:
+          DATABRICKS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          CREATOR_EMAIL: ${{ secrets.CREATOR_EMAIL }}
+          WORKSPACE_EMAIL: ${{ secrets.WORKSPACE_EMAIL }}
