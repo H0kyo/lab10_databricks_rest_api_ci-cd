@@ -17,4 +17,4 @@ jobs:
       - name: Create Cluster
         run: python cluster_creation.py
         env:
-          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+          DATABRICKS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
