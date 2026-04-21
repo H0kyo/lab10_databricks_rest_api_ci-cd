@@ -3,21 +3,29 @@ import requests
 
 url = "https://adb-7405605185991044.4.azuredatabricks.net/api/2.0/clusters/create"
 
-token = os.getenv("DATABRICKS_TOKEN")
+def create_cluster(cluster_name:str, spark_version:str, node_type_id:str, num_workers:str, data_security_mode:str, auto_termination_minutes:str):
 
-headers = {
-    "Authorization": f"Bearer {token}",
-    "Content-Type": "application/json"
-}
+    token = os.getenv("DATABRICKS_TOKEN")
 
-data = {
-    "cluster_name": "hrynchuk_lab10_cluster",
-    "spark_version": "14.3.x-scala2.12",
-    "node_type_id": "Standard_DS3_v2",
-    "num_workers": 1,
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json"
+    }
 
-    "data_security_mode": "SINGLE_USER"
-}
+    data = {
+        "cluster_name": f"{cluster_name}",
+        "spark_version": f"{spark_version}",
+        "node_type_id": f"{node_type_id}",
+        "num_workers": f"{num_workers}",
+        "spark_conf": {
+            "data_security_mode": f"{data_security_mode}"
+        },
+        "autotermination_minutes": f"{auto_termination_minutes}"
+    }
+
+    return headers, data
+
+headers, data = create_cluster("hrynchuk_lab10_cluster", "14.3.x-scala2.12", "Standard_DS3_v2", "1", "SINGLE_USER", "15")
 
 response = requests.post(url, headers=headers, json=data)
 
