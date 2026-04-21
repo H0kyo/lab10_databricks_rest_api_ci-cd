@@ -1,7 +1,7 @@
 import os
 import requests
 
-url = "https://adb-7405605185991044.4.azuredatabricks.net/api/2.0/jobs/create"
+url = f"https://{os.getenv('DATABRICKS_HOST')}/api/2.0/jobs/create"
 
 def create_job(job_name:str, cluster_id:str, notebook_path:str):
 

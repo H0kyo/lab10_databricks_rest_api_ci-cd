@@ -18,3 +18,4 @@ jobs:
         run: python cluster_creation.py
         env:
           DATABRICKS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}

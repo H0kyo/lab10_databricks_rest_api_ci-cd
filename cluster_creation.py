@@ -1,7 +1,9 @@
 import os
 import requests
 
-url = "https://adb-7405605185991044.4.azuredatabricks.net/api/2.0/clusters/create"
+#adb-7405605185991044.4.azuredatabricks.net
+
+url = f"https://{os.getenv('DATABRICKS_HOST')}/api/2.0/clusters/create"
 
 def create_cluster(cluster_name:str, spark_version:str, node_type_id:str, num_workers:str, data_security_mode:str, auto_termination_minutes:str):
 

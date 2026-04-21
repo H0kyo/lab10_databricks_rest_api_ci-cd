@@ -20,3 +20,4 @@ jobs:
           DATABRICKS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           CREATOR_EMAIL: ${{ secrets.CREATOR_EMAIL }}
           WORKSPACE_EMAIL: ${{ secrets.WORKSPACE_EMAIL }}
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
